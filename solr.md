@@ -1,3 +1,24 @@
+# Installation notes
+* cd /tmp
+* Go to the download page https://lucene.apache.org/solr/downloads.html
+* Click on PGP and save it to solr.asc
+* Click on **Binary** releases: solr-8.5.1.tgz (Source release does not have bin/start.jar)
+* Copy the link address from one of the list
+* wget --no-check-certificate https://...
+* Verify the download
+```
+tar -xzvf solr-8.5.1.tgz
+mv solr-8.5.1 /data1/
+copy solr.doe.sh to /data1/solr-8.5.1/bin/
+cd /data1/solr-8.5.1
+mkdir server/trial
+sudo cp -p server/solr/solr.xml server/trial/
+cd server/trial
+sudo mkdir oec ww wwt wc
+cd /data1/
+sudo chown -R solr:solr solr-8.5.1
+```
+
 # copyField - different types of source and dest fields
 **Error**: Indexing failed
 >> "msg":"ERROR: [doc=T200301] Error adding field 'id'='T200301' msg=For input string: \"T200301\"",
