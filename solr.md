@@ -34,6 +34,8 @@ sudo cp -r ../solr/configsets/_default/conf/lang wc/conf/
 cd /data1/
 sudo chown -R solr:solr solr-8.5.1
 ```
+* update the version number in solrconfig.xml: ```<luceneMatchVersion>8.4.1</luceneMatchVersion>```
+
 # start
 * lsof 4.78 (CentOS release 5.11 (Final)) does not support -sTCP:LISTEN (version 4.89 on Ubuntu 18.04.4 works fine)
 ```
