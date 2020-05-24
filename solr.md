@@ -27,6 +27,10 @@ name=oec
 config=solrconfig.xml
 ```
 ```
+sudo cp -r ../solr/configsets/_default/conf/lang oec/conf/
+sudo cp -r ../solr/configsets/_default/conf/lang wwt/conf/
+sudo cp -r ../solr/configsets/_default/conf/lang ww/conf/
+sudo cp -r ../solr/configsets/_default/conf/lang wc/conf/
 cd /data1/
 sudo chown -R solr:solr solr-8.5.1
 ```
