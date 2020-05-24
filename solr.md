@@ -15,6 +15,18 @@ mkdir server/trial
 sudo cp -p server/solr/solr.xml server/trial/
 cd server/trial
 sudo mkdir oec ww wwt wc
+```
+* copy the conf folder for each core
+* create core.properties for each core -- change the name to its correspong core name
+``` 
+#Written by CorePropertiesLocator
+#Sun Jan 05 00:13:00 UTC 2020
+schema=schema.xml
+dataDir=data
+name=oec
+config=solrconfig.xml
+```
+```
 cd /data1/
 sudo chown -R solr:solr solr-8.5.1
 ```
