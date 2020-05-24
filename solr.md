@@ -18,6 +18,23 @@ sudo mkdir oec ww wwt wc
 cd /data1/
 sudo chown -R solr:solr solr-8.5.1
 ```
+# start
+* lsof 4.78 (CentOS release 5.11 (Final)) does not support -sTCP:LISTEN (version 4.89 on Ubuntu 18.04.4 works fine)
+```
+...
+lsof: unsupported TCP/TPI info selection: C
+lsof: unsupported TCP/TPI info selection: P
+lsof: unsupported TCP/TPI info selection: :
+lsof: unsupported TCP/TPI info selection: L
+...
+lsof 4.78
+...
+```
+* remove -sTCP:LISTEN for lsof
+```
+        #running=$(lsof -t -PniTCP:$SOLR_PORT -sTCP:LISTEN)
+        running=$(lsof -t -PniTCP:$SOLR_PORT)
+```
 
 # copyField - different types of source and dest fields
 **Error**: Indexing failed
