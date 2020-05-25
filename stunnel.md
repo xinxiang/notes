@@ -22,7 +22,6 @@ openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 rm -rf /tmp/stunnel
-chmod go-r /etc/stunnel/stunnel.pem
 ```
 * create /etc/stunnel/tunnel.conf 
 ```
@@ -32,10 +31,11 @@ connect = 143
 cert = /etc/stunnel/stunnel.pem
 ```
 
-* update /etc/default/stunnel4
+* update /etc/default/stunnel4 [optional]
 ```
 ENABLED=1
 ```
+* chmod go-r /etc/stunnel/stunnel.pem [optional]
 
 * service stunnel4 restart
 
