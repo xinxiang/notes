@@ -61,6 +61,12 @@ telnet localhost 143
 1 login loginuser*masteruser masterpass
 1 OK Logged in.
 ```
+# Debug
+When I used the htpasswd to create master-users without -s or -d option, the authentication failed; logged in /var/log/dovecot_info.log.
+```
+May 26 23:09:54 auth: Debug: passwd-file(loginuser,::1,masteruser,<S....>): CRYPT(masteruser_pwd) != 'encrypted_string_in_master-users'
+May 26 23:09:56 auth: Debug: client passdb out: FAIL	1	user=loginuser
+```
 
 # References
 * https://doc.dovecot.org/configuration_manual/authentication/master_users/
