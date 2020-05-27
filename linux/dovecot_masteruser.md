@@ -54,6 +54,14 @@ plugin {
   acl = vfile:/etc/dovecot/dovecot-acl:cache_secs=300
 }
 ```
+# Syntax check
+```
+doveconf -n
+```
+# Restart dovecot
+```
+service dovecot restart
+```
 # Test
 ```
 telnet localhost 143
