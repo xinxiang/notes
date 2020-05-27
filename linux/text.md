@@ -6,3 +6,8 @@ awk '{print gsub(/\t/, "")}' infile
 ```
 sed -n '12 p' infile
 ```
+
+* Count the number of characters of each line in a file
+```
+while IFS= read -r line; do echo $(( ${#line} + 1 )); done < infile
+```
