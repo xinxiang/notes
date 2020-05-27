@@ -46,8 +46,9 @@ auth_debug = yes
 auth_debug_passwords = yes
 auth_verbose = yes
 ```
-  * Uncomment the auth-master.conf.ext line
-  * Add the auth_debug_* lines (optional, for trouble shooting)
+  * Uncomment the _auth-master.conf.ext_ line
+  * Add the _auth_debug_* lines (optional, for trouble shooting)
+  
 # Add in /etc/dovecot/conf.d/90-acl.conf
 ```
 plugin {
