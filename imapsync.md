@@ -29,6 +29,15 @@ imapsync \
      --host2 test2.lamiral.info --user2 test2 --password2 secret2
 ```
 
+* fix "Request is trottled" - caused by limits on mailboxes placed by Office365
+```
+imapsync \
+     --folder Archive.2006.Sent --pipemess "reformime -r7" \
+     --maxbytespersecond 100_000 --maxmessagespersecond 2 --exitwhenover 1_000_000_000 \
+     --host1 test1.lamiral.info --user1 test1 --password1 secret1 \
+     --host2 test2.lamiral.info --user2 test2 --password2 secret2
+```
+
 # References
 * [APPEND error - fix long lines](https://imapsync.lamiral.info/FAQ.d/FAQ.APPEND_errors.txt)
 ```
@@ -36,6 +45,7 @@ Err 1/11: - msg Archive.2006.Sent/810 {27848} could not append ( Subject:...],
 Date:..., Size:[27848], Flags:[\Seen] ) 
 to folder Archive/2006/Sent: socket closed while reading data from server (4x)
 ```
+* [Trottled error](https://github.com/imapsync/imapsync/issues/198)
 ```
 Err 1/4: - msg Peter/118 {4792} could not append ( Subject:..., 
 Date:..., Size:[4720], Flags:[\Seen] )
