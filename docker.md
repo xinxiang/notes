@@ -15,7 +15,11 @@ docker rm $(docker ps -a -q)
 ```
 docker rmi $(docker images -f "dangling=true" -q)
 ```
-  
+* remove all images
+```
+  docker rmi $(docker images -a -q)
+```
+
 ```
 + export 'GNUPGHOME=/tmp/gnupg_home'
 + mkdir -p /tmp/gnupg_home
