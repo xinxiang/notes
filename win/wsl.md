@@ -97,4 +97,7 @@ Ref:
 * https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
 * https://docs.docker.com/docker-for-windows/wsl/
 
+# VS Code line ending:
+AFAIK there is no way to visually see line endings in the editor space, but in the bottom-right corner of the window there is an indicator that says "CLRF" or "LF" which will let you set the line endings for a particular file. Clicking on the text will allow you to change the line endings as well.
 
+https://stackoverflow.com/questions/39525417/visual-studio-code-how-to-show-line-endings#:~:text=AFAIK%20there%20is%20no%20way,the%20line%20endings%20as%20well.
