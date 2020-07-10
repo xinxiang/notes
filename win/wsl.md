@@ -84,3 +84,15 @@ https://superuser.com/questions/1123552/how-to-ssh-into-wsl
 Didn't do much about this.
 
 https://nickjanetakis.com/blog/using-wsl-and-mobaxterm-to-create-a-linux-dev-environment-on-windows
+
+# VS Code with WSL -Remote
+Remote - WSL runs commands and extensions directly in WSL so you don't have to worry about pathing issues, binary compatibility, or other cross-OS challenges. You're able to use VS Code in WSL just as you would from Windows.
+
+* Start VS Code.
+* Press F1, enter Remote-WSL: New Window, and hit enter.
+* Use the File menu to open your folder.
+* Terminal --> New Terminal
+
+Ref: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+
+
