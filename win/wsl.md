@@ -93,6 +93,8 @@ Remote - WSL runs commands and extensions directly in WSL so you don't have to w
 * Use the File menu to open your folder.
 * Terminal --> New Terminal
 
-Ref: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+Ref: 
+* https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
+* https://docs.docker.com/docker-for-windows/wsl/
 
 
