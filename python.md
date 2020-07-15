@@ -29,3 +29,10 @@ Install pip on Ubuntu
 sudo apt install python3-venv python3-pip
 ```
 Ref: https://packaging.python.org/guides/installing-using-linux-tools/
+
+```
+Install virtual env:
+```
+sudo apt install python3-testresources
+python -m pip install --upgrade pip setuptools wheel
+```
