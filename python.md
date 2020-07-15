@@ -23,3 +23,9 @@ _random             dummy_threading     pipes               tty
 _sha1               easy_install        pkg_resources       turtle
 ...
 ```
+
+Install pip on Ubuntu
+```
+sudo apt install python3-venv python3-pip
+```
+Ref: https://packaging.python.org/guides/installing-using-linux-tools/
