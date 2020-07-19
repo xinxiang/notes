@@ -1,3 +1,22 @@
+# pipe
+## highlight
+```
+@Pipe({ name: 'highlight' })
+export class HighlightPipe implements PipeTransform {
+  transform(text: string, search): string {
+    const pattern = search
+      .replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")
+      .split(' ')
+      .filter(t => t.length > 0)
+      .join('|');
+    const regex = new RegExp(pattern, 'gi');
+
+    return search ? text.replace(regex, match => `<b>${match}</b>`) : text;
+  }
+}
+```
+* https://stackoverflow.com/questions/49653410/mat-autocomplete-filter-to-hightlight-partial-string-matches
+
 # Readings
 * [AutoComplete](https://itnext.io/using-angular-6-material-auto-complete-with-async-data-6d89501c4b79)
 * [Clone Object](https://medium.com/better-programming/3-ways-to-clone-objects-in-javascript-f752d148054d)
