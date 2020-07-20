@@ -17,6 +17,23 @@ export class HighlightPipe implements PipeTransform {
 ```
 * https://stackoverflow.com/questions/49653410/mat-autocomplete-filter-to-hightlight-partial-string-matches
 
+```
+<form class="example-form">
+	<mat-form-field class="example-full-width">
+		<input matInput placeholder="State" aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+		<mat-autocomplete #auto="matAutocomplete">
+			<mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+        <span [innerHTML]="state.name | highLight: toHighlight : stateCtrl.value"></span>
+				<span></span>
+			</mat-option>
+		</mat-autocomplete>
+	</mat-form-field>
+</form>
+<button mat-button (click)="reset()" >reset</button>
+```
+
+* https://stackblitz.com/edit/angular-nue8pb-13no5c?file=app%2Fautocomplete-overview-example.html
+
 # Readings
 * [AutoComplete](https://itnext.io/using-angular-6-material-auto-complete-with-async-data-6d89501c4b79)
 * [Clone Object](https://medium.com/better-programming/3-ways-to-clone-objects-in-javascript-f752d148054d)
