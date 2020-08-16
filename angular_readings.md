@@ -41,6 +41,7 @@ export class HighlightPipe implements PipeTransform {
 * https://medium.com/@wojtrawi
 * [Sharing Data](https://www.intersysconsulting.com/blog/angular-components/)
 * Handle Errors:
+  * [Error Handling](https://pusher.com/tutorials/error-handling-angular-part-2)
   * [Interceptors](https://www.digitalocean.com/community/tutorials/how-to-use-angular-interceptors-to-manage-http-requests-and-error-handling)
   * [try catch finally](https://joefallon.net/2018/09/typescript-try-catch-finally-and-custom-errors/)
 
