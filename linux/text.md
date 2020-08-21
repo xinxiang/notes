@@ -11,3 +11,13 @@ sed -n '12 p' infile
 ```
 while IFS= read -r line; do echo $(( ${#line} + 1 )); done < infile
 ```
+
+* [Replace by position](https://www.unix.com/shell-programming-and-scripting/175977-awk-command-replace-specific-position-characters.html) - replace col 306 to 386 with placeholder@gmail.com and fill the reset with space:
+```
+awk 'function repl(s,f,t,v)
+{return substr(s,1,f-1) sprintf("%-*s", t-f+1, v) substr(s,t+1)}
+{a=repl($0,306,386,"placeholder@gmail.com")
+print a}' srcFile > outFile
+
+```
+
