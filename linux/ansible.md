@@ -74,11 +74,15 @@ ansible-playbook sample-playbook.yml -e 'ansible_python_interpreter=/usr/bin/pyt
       register: syncfile
       with_items:
        - "/tmp/test.txt"
-       - "/data/tapor/web-dir/doeapps"
+       - "/data/tapor/web-dir/doeapps/"
  ```
  * /tmp/test.txt will be copied from old to new
  * when copy directory, the parent directory has to be exist; /data/tapor/web-dir/ has to be existed on new server
-
+ * without the trailing /; it becomes /data/tapor/web-dir/doeapps/doeapps on dest
+```
+with_items:
+       - "/data/tapor/web-dir/doeapps"
+```
 
 # Reference
 * Install & Config: https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-20-04
