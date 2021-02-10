@@ -45,6 +45,41 @@ ansible localhost -m ping -e 'ansible_python_interpreter=/usr/bin/python3'
 ansible-playbook sample-playbook.yml -e 'ansible_python_interpreter=/usr/bin/python3'
 ```
 
+# playbook
+## create directory
+
+```
+- name: create web-dir folder on host "{{groups['tapor'][1]}}"
+  hosts: "{{groups['tapor'][1]}}"
+  tasks:
+  - name: create /data/tapor/web-dir
+    file:
+      path: /data/tapor/web-dir
+      state: directory
+
+```
+## copy files and directories
+```
+- name: Sync Push files / directories from old to new - Executed on source host "{{groups['tapor'][0]}}"
+  hosts: "{{groups['tapor'][1]}}" 
+  user: doe 
+  tasks:
+    - name: Copy the file from old to new
+      tags: sync-push
+      synchronize:
+        src: "{{ item }}"
+        dest: "{{ item }}"
+        mode: push
+      delegate_to: "{{groups['tapor'][0]}}"
+      register: syncfile
+      with_items:
+       - "/tmp/test.txt"
+       - "/data/tapor/web-dir/doeapps"
+ ```
+ * /tmp/test.txt will be copied from old to new
+ * when copy directory, the parent directory has to be exist; /data/tapor/web-dir/ has to be existed on new server
+
+
 # Reference
 * Install & Config: https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-20-04
 * Copy files: https://www.middlewareinventory.com/blog/how-to-copy-files-between-remote-servers-ansible-fetch-sync/
