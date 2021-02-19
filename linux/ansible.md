@@ -83,6 +83,27 @@ ansible-playbook sample-playbook.yml -e 'ansible_python_interpreter=/usr/bin/pyt
 with_items:
        - "/data/tapor/web-dir/doeapps"
 ```
+## rysnc_opts
+```
+- name: Sync push Solr core from old to new - Executed on source host "{{groups['tapor'][0]}}; then manually put them into places on new server."
+  hosts: "{{groups['tapor'][1]}}" 
+  user: doe 
+  tasks:
+    - name: copy cores under /data1/solr/server
+      tags: sync-push
+      synchronize:
+        src: "/data1/solr/server/"
+        dest: "/tmp/cores/"
+        archive: yes
+        mode: push
+        rsync_opts:
+          - '--exclude=data'
+          - '--exclude=solr.xml'
+          - '--exclude=zoo.cfg'
+      delegate_to: "{{groups['tapor'][0]}}"
+      register: syncfile
+```
+**Note:** When I used "..." for rsync_opts, I got "Unsupported parameters for (synchronize) module: rysnc_opts ...", but double quotes worked in other tasks.
 
 # Reference
 * Install & Config: https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-20-04
