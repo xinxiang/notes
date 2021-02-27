@@ -20,4 +20,13 @@ awk 'function repl(s,f,t,v)
 print a}' srcFile > outFile
 
 ```
+* Find and Update Content with perl
+```
+find . type f -name Root | xargs perl -pie "s/\/home\/doe\//\/data\//"
+Can't open perl script "s/\/home\/doe\//\/data\//": No such file or directory
+
+find . type f -name Root | xargs perl -p -i -e "s/\/home\/doe\//\/data\//"
+Worked as expected.
+```
+
 
