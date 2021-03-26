@@ -1,3 +1,12 @@
+# Where Is Perl Module Installed
+```
+perl -MPlack::Middleware::Auth::Doe -e 'print $INC{"Plack/Middleware/Auth/Doe.pm"}'
+
+perldoc -l Plack::Middleware::Auth::Doe
+```
+
+**Ref**: https://stackoverflow.com/questions/1557959/how-can-i-find-out-where-a-perl-module-is-installed
+
 # Hash
 ```
 my %hash = ();
