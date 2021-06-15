@@ -91,6 +91,17 @@ Enter a passcode or select one of the following options:
 Passcode or option (1-1): 
 ```
 
+## MFA and ansible
+Server *myserver* is configured to use MFA for some users, and user *ansible* is excluded from using MFA. Run *ssh ansible@myserver* -- success; howerver failed. Disable MFA by commenting out the *AuthenticationMethods publickey,keyboard-interactive* line in sshd_config and ansible works.
+```
+# ansible -m ping all
+myserver | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ansible@mysever: Permission denied (keyboard-interactive).",
+    "unreachable": true
+}
+```
+
 ## Reference
 * https://duo.com/docs/duounix#pam-configuration
 * https://duo.com/docs/duounix-faq
