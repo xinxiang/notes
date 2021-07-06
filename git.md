@@ -26,3 +26,19 @@ git push
 mv path/to/dir/dir_to_remove.bk path/to/dir/dir_to_remove
 Add path/to/dir/dir_to_remove in .gitignore
 ```
+
+# .gitignore
+```
+$ cat .gitignore
+env/*
+__pycache__/
+*.py[cod]
+
+$ git status
+...
+modified:   __pycache__/app.cpython-38.pyc
+...
+
+$ git rm -r --cached __pycached
+$ git status
+```
