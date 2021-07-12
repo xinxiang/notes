@@ -1,3 +1,5 @@
+tapor server issues: networkservices@library.utoronto.ca
+
 nightly_activities_uht
 ```
     echo "**** for only the updated corpus texts ****"
