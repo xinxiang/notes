@@ -1,7 +1,7 @@
 # Automate CSR and Key Generation
 * https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.htm
 * https://unix.stackexchange.com/questions/245778/automate-textual-input-to-a-command-from-a-bash-script
-
+* https://www.feistyduck.com/library/openssl-cookbook/online/ch-testing-with-openssl.html
 ```
 #!/bin/sh
 
